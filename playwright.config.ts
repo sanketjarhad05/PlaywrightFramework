@@ -44,7 +44,7 @@ export default defineConfig({
     headless: true,
     screenshot : 'on',
     video : 'on',
-    
+    viewport: null,
 
   },
 
@@ -52,7 +52,10 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { 
+        ...devices['Desktop Chrome'],
+        launchArgs: ['--start-maximized'],
+      },
     },
 
     
